@@ -1,0 +1,64 @@
+/*
+ * Copyright © 2016 Atomist, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@description "creates a new Go kit Rest Service project"
+@tag "go"
+@tag "golang"
+@tag "gokit"
+@generator
+editor NewGoKitRestService
+
+@maxLength 21
+@description "Name of your new project."
+@displayName "Project Name"
+param project_name: @project_name
+
+@description "Name of your GitHub organisation."
+@displayName "Organisation Name"
+@minLength 1
+param org_name: @any
+
+@description "Name of your new project's service."
+@displayName "Service Name"
+@minLength 1
+@maxLength 21
+param service_name: @project_name
+
+@description "Name of your new project's service's contract."
+@displayName "Contract Name"
+@minLength 1
+@maxLength 21
+param service_contract_name: @project_name
+
+@description "Description of the new project"
+@displayName "description"
+@optional
+@default "My new Go kit microservice project"
+@validInput "Free Text"
+@minLength 1
+param description: @any
+
+let default_service_name = "mymicroservice"
+let default_service_contract_name = "mymicroservicecontract"
+
+with project begin
+  do replace "github.com/atomist-project-templates/gokit-rest-service/mymicroservice" { return "github.com/" + org_name + "/" + project_name + "/" + service_name }
+  do replace default_service_name service_name
+  do replace default_service_contract_name service_contract_name
+  do replace { default_service_name + "Handler" } { service_name + "Handler" }
+  do replaceInPath default_service_name service_name
+  do merge "README.vm" "README.md"
+end
