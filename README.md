@@ -51,7 +51,7 @@ Note the first parameter, the `project_name`, is different in that you
 do not need to supply the name of the parameter, just the value.  This
 is because the `project_name` parameter is required for all
 generators.  This will create a directory named `pet-shop-service` and
-populate it with a working Spring Boot REST service.  If you are happy
+populate it with a working Go kit REST service.  If you are happy
 with the change, commit the changes.
 
 ```
