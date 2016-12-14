@@ -12,7 +12,7 @@ a [Go kit][go-kit] [Rest][rest] Service project.
 
 ### NewGoKitRestService
 
-The NewGoKitRestService Generator creates a new [Gokit][gokit] [REST][rest] service project.
+The NewGoKitRestService Generator creates a new [Gokit][go-kit] [REST][rest] service project.
 
 [go-kit]: https://github.com/go-kit/kit
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer
