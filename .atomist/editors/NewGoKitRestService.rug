@@ -46,7 +46,7 @@ param service_contract_name: @project_name
 @description "Description of the new project"
 @displayName "description"
 @optional
-@default "My new Go kit microservice project"
+@default "My new Go kit service project"
 @validInput "Free Text"
 @minLength 1
 param description: @any
@@ -54,7 +54,7 @@ param description: @any
 let default_service_name = "mymicroservice"
 let default_service_contract_name = "mymicroservicecontract"
 
-with project begin
+with Project begin
   do replace "github.com/atomist-project-templates/gokit-rest-service/mymicroservice" { return "github.com/" + org_name + "/" + project_name + "/" + service_name }
   do replace default_service_name service_name
   do replace default_service_contract_name service_contract_name
