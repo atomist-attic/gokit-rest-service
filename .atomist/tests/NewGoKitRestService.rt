@@ -54,3 +54,5 @@ then
     and fileContains microserviceImplementationFile { "(h " + service_name }
     and fileContains microserviceImplementationFile { "func makeHelloWorldEndpoint(svc " + service_contract_name }
     and fileContains readmeFilename description
+    and {!result.fileExists("CHANGELOG.md")}
+    and {!result.fileExists("CODE_OF_CONDUCT.md")}

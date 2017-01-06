@@ -21,6 +21,9 @@
 @generator
 editor NewGoKitRestService
 
+uses atomist-rugs.common-editors.RemoveChangeLog
+uses atomist-rugs.common-editors.RemoveCodeOfConduct
+
 @maxLength 21
 @description "Name of your new project."
 @displayName "Project Name"
@@ -62,3 +65,6 @@ with Project begin
   do replaceInPath default_service_name service_name
   do merge "README.vm" "README.md"
 end
+
+RemoveChangeLog
+RemoveCodeOfConduct
