@@ -1,5 +1,6 @@
 # Atomist 'gokit-rest-service'
 
+[![Build Status](https://travis-ci.org/atomist-rugs/gokit-rest-service.svg?branch=master)](https://travis-ci.org/atomist-rugs/gokit-rest-service)
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
 This [Rug](http://docs.atomist.com/) archive contains a Generator for
